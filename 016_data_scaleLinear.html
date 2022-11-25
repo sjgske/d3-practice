@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // range : 변환 후, domain: 변환 전
+      const f1 = d3.scaleLinear().range([0, 100]).domain([0, 500]);
+      console.log(f1(250)); // 50
+
+      crayons = d3
+        .scaleLinear()
+        .domain([-1, 0, 1])
+        .range(["orange", "white", "green"]);
+      console.log(crayons(0.3)); // rgb(179, 217, 179)
+
+      // 인구수가 들어왔다고 생각하고 높이를 어느정도로 설정할지 고민해보세요. 아래 코드에서 물음표 부분을 고민해보시면 됩니다.
+      const f2 = d3
+        .scaleLinear()
+        .range([200, 500]) // 픽셀
+        .domain([20000000, 50000000]); // 인구수
+      console.log(f2(25000000)); // 250
+    </script>
+  </body>
+</html>
